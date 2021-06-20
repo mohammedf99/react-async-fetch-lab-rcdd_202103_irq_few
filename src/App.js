@@ -9,11 +9,19 @@ export class App extends React.Component {
       peopleInSpace: []
   }
   
+  render() {
+    return (
+      <div>
+        {this.state.peopleInSpace.map((person, id) => <h1 key={id}>{person.name}</h1>)}
+      </div>
+    )
+  }
+  
   componentDidMount() {
     
     URL = "http://api.open-notify.org/astros.json";
     
-    fetch(URL).then(res => res.json()).then(json => console.log(json));
+    fetch(URL).then(res => res.json()).then(json => setState);
     
   }
   
