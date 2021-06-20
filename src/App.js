@@ -8,9 +8,9 @@ export class App extends React.Component {
   
   componentDidMount() {
     
-    URL_API = ""
+    URL = "http://api.open-notify.org/astros.json";
     
-    fetch()
+    fetch(URL).then(res => res.json()).then(json => console.log(json));
     
   }
   
