@@ -1,14 +1,14 @@
+
+@@ -1 +1,27 @@
 // create your App component here
+import React, { Component } from 'react'
 
-import React, { Component } from "react";
+class App extends Component {
 
-
-export class App extends Component {
-  
-    state = {
+  state = {
       peopleInSpace: []
   }
-  
+
   render() {
     return (
       <div>
@@ -16,15 +16,14 @@ export class App extends Component {
       </div>
     )
   }
-  
+
   componentDidMount() {
-    
-    URL = "http://api.open-notify.org/astros.json";
-    
-    fetch(URL).then(res => res.json()).then(json => setState({peopleInSpace: json}));
-    
+    fetch('http://api.open-notify.org/astros.json')
+      .then(response => response.json())
+      .then(({people}) => this.setState({ peopleInSpace: people }))
+
   }
-  
+
 }
 
-export default App;
+export default App
