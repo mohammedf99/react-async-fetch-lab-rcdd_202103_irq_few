@@ -21,7 +21,7 @@ export class App extends React.Component {
     
     URL = "http://api.open-notify.org/astros.json";
     
-    fetch(URL).then(res => res.json()).then(json => setState({peopleInSpace = }));
+    fetch(URL).then(res => res.json()).then(json => setState({peopleInSpace: json}));
     
   }
   
